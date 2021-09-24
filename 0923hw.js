@@ -9,25 +9,22 @@
 // [1, 5, 2] => false
 
 
+var arr = [];
+
 function isSorted(arr) {
-  var arr = [39, 42];
-  //_1 function for  ascending ---> lexical scope
-  var ascArr = arr.sort( 
-    function (a, b) {
-      return a - b;
+
+  for (let i = 0; i < arr.length; i++) {
+    //_1 check if ascending  or not
+    if (arr[ i - 1] > arr[ i ]) {
+      return true
     }
-  );
 
-  //_2 function for descending. ---> lexical scope
-  var desArr = arr.sort(
-    function(i, j) {
-      return b - a;
+    //_2 check if descending. or not
+    else if (arr[ i - 1] < arr[ i ]) {
+      return true
     }
-  );
-
-  //_3 check the array 
-  var result =  ( arr.length === ascArr || arr.length === desArr ) && (arr.every(item => ascArr.includes( item )) || arr.every(item => desArr.includes( item )) );
-
+  }
 }
+
 
 console.log(isSorted());
