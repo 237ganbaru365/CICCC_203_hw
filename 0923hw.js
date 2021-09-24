@@ -9,21 +9,22 @@
 // [1, 5, 2] => false
 
 
-var arr = [];
-
 function isSorted(arr) {
+  var arr = [1, 5, 2];
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 1; i < arr.length - 1; i++) {
     //_1 check if ascending  or not
+    //_2 check if descending. or not
     if (arr[ i - 1] > arr[ i ]) {
-      return true
+      return true;
+    } else if ( arr[ i - 1] < arr[ i ]) {
+      return true;
+    } else {
+      return false;
     }
 
-    //_2 check if descending. or not
-    else if (arr[ i - 1] < arr[ i ]) {
-      return true
-    }
   }
+
 }
 
 
