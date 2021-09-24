@@ -10,22 +10,24 @@
 
 
 function isSorted(arr) {
-  var arr = [1, 5, 2];
 
-  for (let i = 1; i < arr.length - 1; i++) {
-    //_1 check if ascending  or not
-    //_2 check if descending. or not
-    if (arr[ i - 1] > arr[ i ]) {
-      return true;
-    } else if ( arr[ i - 1] < arr[ i ]) {
-      return true;
+//_1 check if ascending  or not
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i - 1] > arr[i] || arr[i - 1] < arr[i]) {
+        return true
     } else {
-      return false;
+      return false
     }
-
   }
+  return true
 
 }
 
-
-console.log(isSorted());
+console.log('----------------------');
+console.log(isSorted([]))
+console.log(isSorted([42]))
+console.log(isSorted([39, 42]))
+console.log(isSorted([42, 39]))
+console.log(isSorted([1, 2, 3, 4, 5]))
+console.log(isSorted([5, 4, 3, 2, 1]))
+console.log(isSorted([1, 5, 2]))
